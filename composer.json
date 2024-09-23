@@ -31,7 +31,7 @@
         "phpstan/phpstan-strict-rules": "^1.5"
     },
     "require": {
-        "symfony/framework-bundle": "^6.0|^7.0",
+        "symfony/framework-bundle": "^6.0|^7.0"
     },
     "config": {
         "allow-plugins": {
