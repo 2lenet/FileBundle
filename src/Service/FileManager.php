@@ -27,8 +27,8 @@ class FileManager
         $y = $date->format('Y');
         $m = $date->format('m');
         $d = $date->format('d');
-        $dbPath = "data/".$storageKey."/$y/$m/$d/".$id.".".$ext;
-        $absPath = $this->rootDir.DIRECTORY_SEPARATOR.$dbPath;
+        $dbPath = "data/" . $storageKey . "/$y/$m/$d/" . $id . "." . $ext;
+        $absPath = $this->rootDir . DIRECTORY_SEPARATOR . $dbPath;
 
         if (!is_dir($absPath)) {
             mkdir($absPath, 0777, true);
