@@ -30,8 +30,8 @@ class FileManager
         $dbPath = "data/" . $storageKey . "/$y/$m/$d/" . $id . "." . $ext;
         $absPath = $this->rootDir . DIRECTORY_SEPARATOR . $dbPath;
 
-        if (!is_dir($absPath)) {
-            mkdir($absPath, 0777, true);
+        if (!is_dir(dirname($absPath))) {
+            mkdir(dirname($absPath), 0777, true);
         }
         $spec = new FileSpec();
         $spec->dbPath = $dbPath;
