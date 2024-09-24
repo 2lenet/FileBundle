@@ -1,6 +1,6 @@
 <?php
 
-namespace Lle\ConfigBundle\src;
+namespace Lle\FileBundle;
 
 class FileSpec
 {

@@ -2,7 +2,7 @@
 
 namespace Lle\FileBundle\Service;
 
-use Lle\ConfigBundle\src\FileSpec;
+use Lle\FileBundle\FileSpec;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 class FileManager
