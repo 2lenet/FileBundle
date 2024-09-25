@@ -14,7 +14,7 @@ class FileManager
 
     public function getLocalFilename(string $storageKey, ?object $entity, string $ext = ".bin"): FileSpec
     {
-        if ($entity !== null && method_exists($entity, 'getId')) {
+        if ($entity !== null && method_exists($entity, 'getId') && $entity->getId() !== null) {
             $id = $entity->getId();
         } else {
             $id = uniqid();
@@ -36,6 +36,7 @@ class FileManager
         $spec = new FileSpec();
         $spec->dbPath = $dbPath;
         $spec->absPath = $absPath;
+
         return $spec;
     }
 }
