@@ -12,14 +12,14 @@ class FileManager
         $this->rootDir = $kernel->getProjectDir();
     }
 
-    public function getLocalFilename(string $storageKey, object $entity, string $ext = ".bin"): FileSpec
+    public function getLocalFilename(string $storageKey, ?object $entity, string $ext = ".bin"): FileSpec
     {
-        if (method_exists($entity, 'getId')) {
+        if ($entity !== null && method_exists($entity, 'getId')) {
             $id = $entity->getId();
         } else {
             $id = uniqid();
         }
-        if (method_exists($entity, 'getDateForFilename')) {
+        if ($entity !== null && method_exists($entity, 'getDateForFilename')) {
             $date = $entity->getDateForFilename();
         } else {
             $date = new \DateTime();
