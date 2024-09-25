@@ -4,6 +4,6 @@ namespace Lle\FileBundle;
 
 class FileSpec
 {
-    public $absPath;
-    public $dbPath;
+    public string $absPath;
+    public string $dbPath;
 }
