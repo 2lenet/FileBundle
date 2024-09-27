@@ -7,12 +7,13 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class FileManager
 {
+    protected string $rootDir = "";
     public function __construct(KernelInterface $kernel)
     {
         $this->rootDir = $kernel->getProjectDir();
     }
 
-    public function getLocalFilename(string $storageKey, ?object $entity, string $ext = ".bin"): FileSpec
+    public function getLocalFilename(string $storageKey, ?object $entity, string $ext = "bin"): FileSpec
     {
         if ($entity !== null && method_exists($entity, 'getId') && $entity->getId() !== null) {
             $id = $entity->getId();
