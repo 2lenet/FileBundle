@@ -1,18 +1,17 @@
 includes:
-  - vendor/phpstan/phpstan-phpunit/extension.neon
-  - vendor/phpstan/phpstan-mockery/extension.neon
-  - vendor/phpstan/phpstan-symfony/extension.neon
-  - vendor/phpstan/phpstan-symfony/rules.neon
-  - vendor/phpstan/phpstan-doctrine/extension.neon
+    - ../vendor/phpstan/phpstan-phpunit/extension.neon
+    - ../vendor/phpstan/phpstan-mockery/extension.neon
+    - ../vendor/phpstan/phpstan-symfony/extension.neon
+    - ../vendor/phpstan/phpstan-symfony/rules.neon
+    - ../vendor/phpstan/phpstan-doctrine/extension.neon
+    - ../vendor/phpstan/phpstan-deprecation-rules/rules.neon
 
 parameters:
-  level: 8
-  paths:
-     - /builds/2lenet/config-bundle #gitlab
-  excludePaths:
-    - vendor/*
-    - tests/*
-  checkMissingIterableValueType: false
-  checkGenericClassInNonGenericObjectType: false
-#  doctrine:
-#      objectManagerLoader: tests/object-manager.php
+    level: 8
+    paths:
+        - ../src
+        - ../tests
+    excludePaths:
+        - '../src/Resources/skeleton'
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
